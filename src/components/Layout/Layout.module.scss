@@ -1,0 +1,264 @@
+.wrapper {
+  position: relative;
+  height: 100vh;
+  transform-origin: right;
+  perspective: 1500px;
+  transition: all 0.6s 1s;
+  // overflow: hidden;
+
+  &.navOpened {
+    transform: rotateY(-15deg);
+    transition: all 0.6s;
+
+    @media (max-width: 1900px) {
+      transform: rotateY(-25deg);
+    }
+    @media (max-width: 1200px) {
+      transform: rotateY(-35deg);
+    }
+    @media (max-width: 850px) {
+      transform: rotateY(-45deg);
+    }
+    @media (max-width: 767.98px) {
+      transform: none;
+    }
+
+    .nav {
+      transition: all 1s 0.6s;
+      transform: rotateY(83deg);
+
+      @media (max-width: 1900px) {
+        transform: rotateY(78deg);
+      }
+      @media (max-width: 1200px) {
+        transform: rotateY(73deg);
+      }
+      @media (max-width: 850px) {
+        transform: rotateY(68deg);
+      }
+      @media (max-width: 767.98px) {
+        transform: rotateY(0deg);
+      }
+    }
+
+    .nav-open-button {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.nav {
+  position: absolute;
+  right: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 23.5%;
+  height: 100vh;
+  background-color: #333;
+  color: #c7c7c7;
+  transform-origin: right;
+  backface-visibility: hidden;
+  transform: rotateY(-80deg);
+  transition: all 1s;
+
+  .navInner {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px;
+
+    .etc-links {
+    }
+  }
+
+  .nav-close-button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c7c7c7;
+    font-size: 65px;
+    cursor: pointer;
+
+    transition: all 0.3s;
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .logo {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0 auto;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -46%);
+      path {
+        fill: #d6d6d6;
+        transition: all 0.6s;
+      }
+    }
+    &:hover {
+      svg path {
+        fill: #fff;
+      }
+    }
+  }
+
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 24px;
+    font-weight: 700;
+
+    li {
+      transition: all 0.3s;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .etc-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 20px;
+
+    a {
+      transition: all 0.3s;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  h1 {
+    margin: 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 1900px) {
+    width: 42%;
+  }
+  @media (max-width: 1200px) {
+    width: 62%;
+  }
+  @media (max-width: 850px) {
+    width: 87%;
+  }
+  @media (max-width: 767.98px) {
+  }
+}
+
+.main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+
+  .nav-open-button {
+    box-sizing: content-box;
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    width: 95px;
+    height: 120px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px 40px 20px 20px;
+    border-radius: 0 20px 20px 0;
+    transition: all 0.6s;
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 70%;
+      opacity: 0;
+      transition: all 0.6s;
+      span {
+        display: block;
+        width: 80px;
+        border: 6px solid #fff;
+        border-radius: 15px;
+      }
+    }
+
+    svg {
+      position: absolute;
+      right: 0;
+      margin-top: 17px;
+      transition: all 0.6s;
+
+      path {
+        fill: #d6d6d6;
+        transition: all 0.6s;
+      }
+    }
+
+    &:hover {
+      width: 220px;
+      background-color: rgba(255, 255, 255, 0.3);
+      .hamburger {
+        opacity: 1;
+      }
+      svg {
+        right: 40px;
+        animation: icon-move 0.5s alternate infinite;
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &.fadeout {
+    &::after {
+      transition: all 1s;
+      z-index: 998;
+      background-color: rgba(0, 0, 0, 1);
+    }
+  }
+
+  @keyframes icon-move {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(10px);
+    }
+  }
+}

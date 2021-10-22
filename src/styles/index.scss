@@ -1,0 +1,40 @@
+@import 'normalize.css';
+@import './custom-reset.scss';
+@import './fonts.scss';
+@import './mixins.scss';
+
+.a11y-hidden {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0); /* IE 6,7 */
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+}
+
+#___gatsby {
+  overflow: hidden;
+}
+#gatsby-focus-wrapper {
+  perspective: 1500px;
+}
+
+.border-animation {
+  @include magic-border(1px, #fff, 1s, 0);
+
+  img {
+    opacity: 0;
+    transition: all 0.8s;
+
+    &.animate {
+      opacity: 1;
+    }
+  }
+}
