@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'https://limeunseop.github.io/apple-new-product/public/',
     title: 'Apple New Product',
   },
   plugins: [
