@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://limeunseop.github.io/apple-new-product/public/',
+    siteUrl: 'https://limeunseop.github.io/apple-new-product/',
     title: 'Apple New Product',
   },
+  pathPrefix: 'apple-new-product',
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
