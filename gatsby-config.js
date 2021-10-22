@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://limeunseop.github.io/',
+    siteUrl: 'https://limeunseop.github.io/apple-new-product',
     title: 'Apple New Product',
   },
   pathPrefix: '/apple-new-product',

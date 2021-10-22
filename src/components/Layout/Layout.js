@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../../styles/index.scss'
-import { useStaticQuery, graphql, Link, navigate } from 'gatsby'
+import { useStaticQuery, graphql, Link, navigate, withPrefix } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Logo from '../../assets/images/logo.svg'
 import * as styles from './Layout.module.scss'
@@ -38,7 +38,10 @@ const Layout = ({ pageTitle, children, showNav }) => {
 
   const handleNavLinkClick = (e) => {
     e.preventDefault()
-    const to = e.currentTarget.getAttribute('href')
+    // a 링크의 이미 세팅돼있는 프리픽스 제거
+    const to = e.currentTarget
+      .getAttribute('href')
+      .replace(withPrefix('/'), '/')
     setNavOpened(false)
 
     const main = document.querySelector(`.${styles.main}`)
