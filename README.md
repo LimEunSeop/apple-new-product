@@ -4,7 +4,7 @@
 
 ## 사용기술
 
-- React + Gatsby
+- React + Gatsby, React Modal
 - SCSS Module, Styled-component
 
 ## 동작 브라우저
