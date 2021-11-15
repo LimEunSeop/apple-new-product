@@ -2,6 +2,9 @@
 
 <a href="https://limeunseop.github.io/apple-new-product">![link](https://img.shields.io/badge/link-https%3A%2F%2Flimeunseop.github.io%2Fapple--new--product-brightgreen)</a>
 
+## 동작 브라우저
+Only Chrome
+
 ## 사용기술
 
 - React + Gatsby
